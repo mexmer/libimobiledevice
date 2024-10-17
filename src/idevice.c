@@ -1081,7 +1081,7 @@ static long ssl_idevice_bio_callback(BIO *b, int oper, const char *argp, int arg
 	case (BIO_CB_READ|BIO_CB_RETURN):
 		if (argp) {
 			bytes = internal_ssl_read(conn, (char *)argp, len);
-			*processed = bytes;
+//			*processed = bytes;
 			return (long)bytes;
 		}
 		return 0;
@@ -1090,7 +1090,7 @@ static long ssl_idevice_bio_callback(BIO *b, int oper, const char *argp, int arg
 		// fallthrough
 	case (BIO_CB_WRITE|BIO_CB_RETURN):
 		bytes = internal_ssl_write(conn, argp, len);
-		*processed = bytes;
+//		*processed = bytes;
 		return (long)bytes;
 	default:
 		return retvalue;
